@@ -20,7 +20,7 @@ function main() {
   const key = logseq.baseInfo.id;
 
   logseq.setMainUIInlineStyle({
-    zIndex: 11
+    zIndex: 11,
   });
 
   logseq.provideStyle(css`
@@ -39,12 +39,11 @@ function main() {
     }
   `);
 
-  logseq.provideUI({
+  logseq.App.registerUIItem("toolbar", {
     key: "open-query-playground",
-    path: "#search",
     template: `
-      <a data-on-click="openQueryPlayground"
-         style="opacity: .6; display: inline-flex;">🗄</a>
+      <a class="button" data-on-click="openQueryPlayground"
+        ><i class="ti ti-code" style=""></i></a>
     `,
   });
 }

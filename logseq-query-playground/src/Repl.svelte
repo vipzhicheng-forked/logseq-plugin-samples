@@ -5,7 +5,7 @@
 
   export let query: string;
 
-  const aceOptions = { fontFamily: "Fira Code", printMargin: false };
+  const aceOptions = { fontFamily: "monospace", printMargin: false };
   let slowQuery: string;
   const dSlowQuery = debounce(() => {
     slowQuery = query;
@@ -36,7 +36,7 @@
     <span slot="header" class="header">Datascript Query</span>
     <AceEditor
       lang="clojure"
-      options={{ ...aceOptions, fontSize: "14px" }}
+      options={{ ...aceOptions, fontSize: "16px" }}
       bind:value={query}
       theme="dracula"
       height="100%"
